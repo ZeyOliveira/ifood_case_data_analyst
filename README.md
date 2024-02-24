@@ -1,12 +1,12 @@
 [![author](https://img.shields.io/badge/Zeygler&nbsp;Oliveira-red.svg)](https://www.linkedin.com/in/zeygler-oliveira-a021a92a4/)
 [![](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 
-# Segmentação de clientes de um supermercado
+# Case iFood - Analista de dados
 
-Um supermercado, através de cartões de fidelidade, possui alguns dados básicos sobre seus clientes, como idade, gênero, renda anual e pontuação de gastos. Tal pontuação é algo que o supermercado atribui ao cliente com base em parâmetros definidos, como comportamento do cliente e dados de compra. O supermercado deseja entender melhor seus clientes, de modo a formular estratégias de negócios, e para isso contratou um cientista de dados para realizar uma segmentação dos clientes.
+Considere uma empresa bem estabelecida que atua no setor de varejo de alimentos. Atualmente, eles têm cerca de vários milhares de clientes registrados e atendem quase um milhão de consumidores por ano. Eles vendem produtos de 5 grandes categorias: vinhos, carnes, frutas exóticas, peixes especialmente preparados e produtos doces. Estes podem ser divididos ainda mais em produtos de gold e regulares. Os clientes podem encomendar e adquirir produtos por meio de 3 canais de vendas: lojas físicas, catálogos e site da empresa. Globalmente, a empresa teve receitas sólidas e uma linha de fundo saudável nos últimos 3 anos, mas as perspectivas de crescimento dos lucros para os próximos 3 anos não são promissoras... Por esse motivo, várias iniciativas estratégicas estão sendo consideradas para inverter essa situação. Um deles é melhorar o desempenho das atividades de marketing, com foco especial em campanhas de marketing.
 
 
-[Link original para o dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
+Baseado no processo seletivo para Analista de Dados do iFood disponível [neste repositório.](https://github.com/ifood/ifood-data-business-analyst-test)
 
 
 <p align="center"> 
@@ -17,32 +17,31 @@ Um supermercado, através de cartões de fidelidade, possui alguns dados básico
 ![pairplot](imagens/pca_clusters_pairplott.png)
 
 ## Objetivos
-Realizar a Segmentação dos Cliente com base nos dados de compra, em circustâncias reais o resultado do projeto poderia ser usado para formular estratégias de negócio.
+Construir um modelo preditivo que apoiará iniciativas de marketing direto e que produza o maior lucro para o próxima campanha de marketing direto, programada para o próximo mês. Desejavelmente, o sucesso dessas atividades provará o valor da abordagem e convencerá os mais céticos dentro da empresa.
 
 
 Objetivos detalhados:
 
-- Fazer o pré-processamento dos dados, tendo em vista que alguns algoritmos de clusterização são sensíveis a escala.
-- Avaliar a separação em grupos dos dados que foram produzidos como resultado da clusterização.
-- Desenvolver gráficos que podem ser utilizados em uma possível apresentação.
-- Facilitar o entendimento dos dados com o objetivo de obter insights para formular estratégias.
-- Boas práticas de programação e organização de códigos e notebooks. Desenvolver o conhecimento e a aplicabilidade da biblioteca SciKit-Learn, a exemplo dos pipelines.
+- Construir uma análise exploratória robusta.
+- Segmentar os clientes e identificar característica similares.
+- Construir um modelo de classificação para prever se um cliente irá comprar o produto oferecido na campanha.
+- Apresentar uma estrutura de projeto detalhado e bem organizado a ser apresentado a partes técnicas interessadas.
+- Responder perguntas do negócio e oferecer um direcionamento para equipe de marketing.
 
 ## Estrutura do repositório
 
 O repositório está estruturado da seguinte forma:
 
 ```
-├── dados
-├── imagens
-├── models
+├── case
+├── data
+├── images
 ├── notebooks
 ├── reports
 ```
 
-- Na pasta `dados` estão os dados utilizados no projeto. O arquivo `Mall_Customers.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
-- Na pasta `imagens` estão as imagens dos gráficos desenvolvidos durante o projeto.
-- Na pasta `models` estão os modelos gerados durante o projeto. 
+- Na pasta `data` estão os dados utilizados no projeto. O arquivo `ml_project1_data.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
+- Na pasta `images` estão as imagens dos gráficos desenvolvidos durante o projeto.
 - Na pasta `notebooks` estão os notebooks organizados do projeto:
   - [`projeto_supermercado_eda_01.ipynb`](notebooks/projeto_supermercado_eda_01.ipynb): notebook com a análise exploratória dos dados usando [ydata-profiling](reports/eda_supermercado.html) e Seaborn e você pode baixar o arquivo 'html' e abrir na guia do seu navagador e visualizar o resultado.
   - [`projeto_supermercado_preprocessing_02.ipynb`](notebooks/projeto_supermercado_preprocessing_02.ipynb): notebook com pré-processamento, definição no número de clusters a ser utilizado, clusterização e gráficos dinâmicos e iterativos.
