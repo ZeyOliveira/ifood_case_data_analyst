@@ -54,45 +54,62 @@ O repositório está estruturado da seguinte forma:
 
 ## Detalhes do dataset utilizado e resumo dos resultados
 
-O dataset utilizado é o contido no arquivo [`Mall_Customers.csv`](dados/Mall_Customers.csv), que contém os seguintes dados:
+Uma descrição detalhada do dataset utilizado está disponível [aqui](data/README.md).<br>
+Com um pipeline com pré-processamento, PCA e K-Means, a base foi segmentada em 3 clusters:
+![clusters](images/pca_clusters.png)
 
-- `CustomerID`: ID do cliente
-- `Gender`: Gênero do cliente
-- `Age`: Idade do cliente
-- `Annual Income (k$)`: Renda anual do cliente
-- `Spending Score (1-100)`: Pontuação de gastos do cliente
 
-Com o pipeline realizando pré-processamento, PCA e K-Means, a base foi segmentada em 4 clusters, como mostrado nas figuras abaixo:
+Análise por cluster:
 
-![grafico_3d](imagens/pca_grafico_3d.png)
+- Cluster 0: 
+  - Renda alta 
+  - gasto alto 
+  - muito provalmente não tem filhos
+  - mais propenso a aceitar campanhas
+  - cluster sem pessoas com escolaridade básica
+  - sem um perfil de idade que se destaque
 
-![boxplot](imagens/pca_clusters_boxplott.png)
+- Cluster 1: 
+  - Renda baixa 
+  - gasto baixo 
+  - provalmente tem filhos
+  - baixa propensão a aceitar campanhas
+  - único cluster com porcentagem significativa de pessoas com escolaridade básica
+  - pessoas mais jovens
 
-- Cluster 0 - pontuação de gastos moderada, renda baixa, idade alta
-- Cluster 1 - pontuação de gastos alta, renda baixa, idade jovem
-- Cluster 2 - pontuação de gastos baixa, renda alta, idade moderada
-- Cluster 3 - pontuação de gastos alta, renda alta, idade jovem
+- Cluster 2: 
+  - Renda intermediária
+  - gasto intermediário
+  - provalmente tem filhos
+  - pode aceitar campanhas
+  - pessoas com idade mais elevada
 
-Transformando os pontos acima em uma tabela:
+Posteriormente, três modelos de classificação foram treinados para prever se um cliente irá comprar o produto oferecido na campanha. Os modelos utilizados foram:
 
-| Pontuação de Gastos | Renda    | Idade    | Cluster |
-| ------------------- | -------- | -------- | ------- |
-| Moderada            | Baixa    | Alta     | 0       |
-| Alta                | Baixa    | Jovem    | 1       |
-| Baixa               | Alta     | Moderada | 2       |
-| Alta                | Alta     | Jovem    | 3       |
+- Regressão Logística
+- Decision Tree
+- KNN
 
+Um DummyClassifier foi utilizado como baseline. Os modelos foram comparados com base em 6 métricas:
+
+![comparing_models](images/comparing_models.png)
+
+Com base nessa comparação, o modelo de Regressão Logística foi escolhido para passar por uma otimização de hiperparâmetros. 
 
 ## Como reproduzir o projeto
 
-O projeto foi desenvolvido utilizando o Python 3.10. Para reproduzir o projeto, crie um ambiente virtual e instale as bibliotecas abaixo:
+O projeto foi desenvolvido utilizando o Python 3.10.12 Para reproduzir o projeto, crie um ambiente virtual com o Conda, ou ferramenta similar, com o Python 3.10.12+ e instale as bibliotecas abaixo:
 
-| Biblioteca   | Versão |
-| ------------ | ------ |
-| Matplotlib   | 3.7.1  |
-| NumPy        | 1.23.5 |
-| Pandas       | 1.5.3  |
-| Scikit-Learn | 1.2.2  |
-| Seaborn      | 0.13.1 |
+| Biblioteca       | Versão |
+| ---------------- | ------ |
+| Imbalanced-Learn | 0.10.1 |
+| Matplotlib       | 3.7.1  |
+| NumPy            | 1.25.2 |
+| Pandas           | 1.5.3  |
+| Scikit-Learn     | 1.2.2  |
+| Seaborn          | 0.13.1 |
+
+Python version: 3.10.12
+
 
 Essas são as bibliotecas principais utilizadas no projeto. O relatório foi gerado com a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling), instale-a se quiser reproduzir o relatório. Para ter um gráfico em 3 dimensões interativo, instale a biblioteca [ipympl](https://matplotlib.org/ipympl/).
