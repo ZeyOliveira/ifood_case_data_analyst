@@ -14,7 +14,7 @@ Baseado no processo seletivo para Analista de Dados do iFood disponível [neste 
 </p>
 
 
-![pairplot](imagens/pca_clusters_pairplott.png)
+![pairplot](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/images/pairplot_clusters.png)
 
 ## Objetivos
 Construir um modelo preditivo que apoiará iniciativas de marketing direto e que produza o maior lucro para o próxima campanha de marketing direto, programada para o próximo mês. Desejavelmente, o sucesso dessas atividades provará o valor da abordagem e convencerá os mais céticos dentro da empresa.
@@ -43,11 +43,14 @@ O repositório está estruturado da seguinte forma:
 - Na pasta `data` estão os dados utilizados no projeto. O arquivo `ml_project1_data.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
 - Na pasta `images` estão as imagens dos gráficos desenvolvidos durante o projeto.
 - Na pasta `notebooks` estão os notebooks organizados do projeto:
-  - [`projeto_supermercado_eda_01.ipynb`](notebooks/projeto_supermercado_eda_01.ipynb): notebook com a análise exploratória dos dados usando [ydata-profiling](reports/eda_supermercado.html) e Seaborn e você pode baixar o arquivo 'html' e abrir na guia do seu navagador e visualizar o resultado.
-  - [`projeto_supermercado_preprocessing_02.ipynb`](notebooks/projeto_supermercado_preprocessing_02.ipynb): notebook com pré-processamento, definição no número de clusters a ser utilizado, clusterização e gráficos dinâmicos e iterativos.
-  - [`projeto_supermercado_pca_03.ipynb`](https://nbviewer.org/github/ZeyOliveira/segmentacao_clientes_supermercado/blob/main/notebooks/projeto_supermercado_pca_03.ipynb): Foi utlizado o Pipeline como ferramenta para executar as etapas de (escalonamento, transformação de colunas categóricas, redução de dimensionalidade, e clusterização). O destaque desse notebook foi uso do PCA que ainda não havia sido visto.
-  - [`funcoes_auxiliares.py`](notebooks/funcoes_auxiliares.py): arquivo com funções auxiliares utilizadas nos notebooks.
-- Na pasta `reports` estão os relatórios gerados durante o projeto utilizando a biblioteca [ydata-profiling](reports/eda_supermercado.html).
+  - [`00_package_versions.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/00_package_versions.ipynb): Versões dos principais pacotes utilizados neste projeto.
+  - [`01_eda.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/01_eda.ipynb): notebook que fizemos a Análise Exploratória de Dados, criação de novas features e o desenvolvimento de alguns gráficos para entendimento.
+  - [`02_clustering.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/02_clustering.ipynb): Neste notebook foi feito um estudo do comportamento dos dados no gráfico com o objetivo de saber qual o melhor pré-processamento mais adequado para cada coluna; Em seguida, foi feito a clusterização e algumas visualizações.
+  - [`03_clustering_pca.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/03_clustering_pca.ipynb)): Alguns códigos do notebook anterior foi reaproveitado. A novidade nesse notebook foi a utilização do PCA para redução de dimensionalidade.
+  - [`04_classification.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/04_classification.ipynb)): Aqui foi testado alguns modelos de classificação, que foram avaliados e o modelo selecionado para dar continuidade ao projeto foi o LogisticRegression.
+  - [`05_classification_logreg.ipynb`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/05_classification_logreg.ipynb)): Para finalizar o projeto foi feito a otimização de hiperparâmetros no SelectKBest e no LogisticRegression, e o modelo foi novamente avaliado, assim foi obtido o resultado final.
+  - [`auxiliary_functions.py`](https://github.com/ZeyOliveira/ifood_case_data_analyst/blob/main/notebooks/auxiliary_functions.py): Arquivo com funções auxiliares usados no projeto.
+- Na pasta `reports` estão os relatórios gerados durante o projeto utilizando a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling).
 
 ## Detalhes do dataset utilizado e resumo dos resultados
 
