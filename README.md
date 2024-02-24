@@ -1,106 +1,96 @@
-[![author](https://img.shields.io/badge/Author-Francisco&nbsp;Bustamante-red.svg)](https://www.linkedin.com/in/flsbustamante/)
-[![](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
+[![author](https://img.shields.io/badge/Zeygler&nbsp;Oliveira-red.svg)](https://www.linkedin.com/in/zeygler-oliveira-a021a92a4/)
+[![](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 
-# Case iFood - Analista de dados
+# Segmentação de clientes de um supermercado
 
-Considere uma empresa bem estabelecida que atua no setor de varejo de alimentos. Atualmente, eles têm cerca de vários milhares de clientes registrados e atendem quase um milhão de consumidores por ano. Eles vendem produtos de 5 grandes categorias: vinhos, carnes, frutas exóticas, peixes especialmente preparados e produtos doces. Estes podem ser divididos ainda mais em produtos de *gold* e regulares. Os clientes podem encomendar e adquirir produtos por meio de 3 canais de vendas: lojas físicas, catálogos e site da empresa. Globalmente, a empresa teve receitas sólidas e uma linha de fundo saudável nos últimos 3 anos, mas as perspectivas de crescimento dos lucros para os próximos 3 anos não são promissoras... Por esse motivo, várias iniciativas estratégicas estão sendo consideradas para inverter essa situação. Um deles é melhorar o desempenho das atividades de marketing, com foco especial em campanhas de marketing.
+Um supermercado, através de cartões de fidelidade, possui alguns dados básicos sobre seus clientes, como idade, gênero, renda anual e pontuação de gastos. Tal pontuação é algo que o supermercado atribui ao cliente com base em parâmetros definidos, como comportamento do cliente e dados de compra. O supermercado deseja entender melhor seus clientes, de modo a formular estratégias de negócios, e para isso contratou um cientista de dados para realizar uma segmentação dos clientes.
 
-![pairplot](images/pairplot_clusters.png)
 
-Projeto de ensino utilizado em curso de Ciência de Dados ministrado por mim para a [Hashtag Treinamentos](https://www.hashtagtreinamentos.com/). Baseado no processo seletivo para Analista de Dados do iFood disponível [neste repositório](https://github.com/ifood/ifood-data-business-analyst-test).
+[Link original para o dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
-Descrição completa do case [aqui](case/README.md).
 
 <p align="center"> 
-  <a href="https://www.linkedin.com/in/flsbustamante" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href="https://www.linkedin.com/in/zeygler-oliveira-a021a92a4/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </p>
 
+
+![pairplot](imagens/pca_clusters_pairplott.png)
+
 ## Objetivos
+Realizar a Segmentação dos Cliente com base nos dados de compra, em circustâncias reais o resultado do projeto poderia ser usado para formular estratégias de negócio.
 
-O objetivo deste projeto é mostrar aos alunos como estruturar um projeto para um processo seletivo que foi aplicado na vida real.
-
-Durante o curso, mostrei a importância de realizar o pré-processamento dos dados, bem como a importância de se realizar a análise exploratória dos dados. Muito foi discutido sobre o que deve ser apresentado para em um documento técnico e o que deve ser apresentado em uma apresentação para um público não técnico.
 
 Objetivos detalhados:
 
-- Construir uma análise exploratória robusta.
-- Segmentar os clientes da base de dados fornecida.
-- Construir um modelo de classificação para prever se um cliente irá comprar o produto oferecido na campanha.
-- Apresentar uma estrutura de projeto de Ciência de Dados, com a utilização de notebooks, scripts, relatórios e repositório no GitHub.
-- Apresentar boas práticas de programação em Python, como a utilização de funções e arquivos de script para facilitar o reaproveitamento de código.
-- Mostrar boas práticas de uso do SciKit-Learn, como a utilização de pipelines e otimização de hiperparâmetros.
+- Fazer o pré-processamento dos dados, tendo em vista que alguns algoritmos de clusterização são sensíveis a escala.
+- Avaliar a separação em grupos dos dados que foram produzidos como resultado da clusterização.
+- Desenvolver gráficos que podem ser utilizados em uma possível apresentação.
+- Facilitar o entendimento dos dados com o objetivo de obter insights para formular estratégias.
+- Boas práticas de programação e organização de códigos e notebooks. Desenvolver o conhecimento e a aplicabilidade da biblioteca SciKit-Learn, a exemplo dos pipelines.
 
 ## Estrutura do repositório
 
+O repositório está estruturado da seguinte forma:
+
 ```
-├── case
-├── data
-├── images
+├── dados
+├── imagens
+├── models
 ├── notebooks
 ├── reports
 ```
 
-- Na pasta `data` estão os dados utilizados no projeto. O arquivo `ml_project1_data.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
-- Na pasta `images` estão as imagens utilizadas neste README.
-- Na pasta `notebooks` estão os notebooks com o desenvolvimento do projeto.
-- Na pasta `reports` estão os relatórios gerados durante o projeto utilizando a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling).
+- Na pasta `dados` estão os dados utilizados no projeto. O arquivo `Mall_Customers.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
+- Na pasta `imagens` estão as imagens dos gráficos desenvolvidos durante o projeto.
+- Na pasta `models` estão os modelos gerados durante o projeto. 
+- Na pasta `notebooks` estão os notebooks organizados do projeto:
+  - [`projeto_supermercado_eda_01.ipynb`](notebooks/projeto_supermercado_eda_01.ipynb): notebook com a análise exploratória dos dados usando [ydata-profiling](reports/eda_supermercado.html) e Seaborn e você pode baixar o arquivo 'html' e abrir na guia do seu navagador e visualizar o resultado.
+  - [`projeto_supermercado_preprocessing_02.ipynb`](notebooks/projeto_supermercado_preprocessing_02.ipynb): notebook com pré-processamento, definição no número de clusters a ser utilizado, clusterização e gráficos dinâmicos e iterativos.
+  - [`projeto_supermercado_pca_03.ipynb`](https://nbviewer.org/github/ZeyOliveira/segmentacao_clientes_supermercado/blob/main/notebooks/projeto_supermercado_pca_03.ipynb): Foi utlizado o Pipeline como ferramenta para executar as etapas de (escalonamento, transformação de colunas categóricas, redução de dimensionalidade, e clusterização). O destaque desse notebook foi uso do PCA que ainda não havia sido visto.
+  - [`funcoes_auxiliares.py`](notebooks/funcoes_auxiliares.py): arquivo com funções auxiliares utilizadas nos notebooks.
+- Na pasta `reports` estão os relatórios gerados durante o projeto utilizando a biblioteca [ydata-profiling](reports/eda_supermercado.html).
 
 ## Detalhes do dataset utilizado e resumo dos resultados
 
-Uma descrição detalhada do dataset utilizado está disponível [aqui](data/README.md).
+O dataset utilizado é o contido no arquivo [`Mall_Customers.csv`](dados/Mall_Customers.csv), que contém os seguintes dados:
 
-Com um pipeline com pré-processamento, PCA e K-Means, a base foi segmentada em 3 clusters:
+- `CustomerID`: ID do cliente
+- `Gender`: Gênero do cliente
+- `Age`: Idade do cliente
+- `Annual Income (k$)`: Renda anual do cliente
+- `Spending Score (1-100)`: Pontuação de gastos do cliente
 
-![clusters](images/pca_clusters.png)
+Com o pipeline realizando pré-processamento, PCA e K-Means, a base foi segmentada em 4 clusters, como mostrado nas figuras abaixo:
 
-Análise por cluster:
+![grafico_3d](imagens/pca_grafico_3d.png)
 
-- Cluster 0: 
-  - Renda alta 
-  - gasto alto 
-  - muito provalmente não tem filhos
-  - mais propenso a aceitar campanhas
-  - cluster sem pessoas com escolaridade básica
-  - sem um perfil de idade que se destaque
+![boxplot](imagens/pca_clusters_boxplott.png)
 
-- Cluster 1: 
-  - Renda baixa 
-  - gasto baixo 
-  - provalmente tem filhos
-  - baixa propensão a aceitar campanhas
-  - único cluster com porcentagem significativa de pessoas com escolaridade básica
-  - pessoas mais jovens
+- Cluster 0 - pontuação de gastos moderada, renda baixa, idade alta
+- Cluster 1 - pontuação de gastos alta, renda baixa, idade jovem
+- Cluster 2 - pontuação de gastos baixa, renda alta, idade moderada
+- Cluster 3 - pontuação de gastos alta, renda alta, idade jovem
 
-- Cluster 2: 
-  - Renda intermediária
-  - gasto intermediário
-  - provalmente tem filhos
-  - pode aceitar campanhas
-  - pessoas com idade mais elevada
+Transformando os pontos acima em uma tabela:
 
-Posteriormente, três modelos de classificação foram treinados para prever se um cliente irá comprar o produto oferecido na campanha. Os modelos utilizados foram:
+| Pontuação de Gastos | Renda    | Idade    | Cluster |
+| ------------------- | -------- | -------- | ------- |
+| Moderada            | Baixa    | Alta     | 0       |
+| Alta                | Baixa    | Jovem    | 1       |
+| Baixa               | Alta     | Moderada | 2       |
+| Alta                | Alta     | Jovem    | 3       |
 
-- Regressão Logística
-- Decision Tree
-- KNN
-
-Um DummyClassifier foi utilizado como baseline. Os modelos foram comparados com base em 6 métricas:
-
-![comparing_models](images/comparing_models.png)
-
-Com base nessa comparação, o modelo de Regressão Logística foi escolhido para passar por uma otimização de hiperparâmetros. 
 
 ## Como reproduzir o projeto
 
-O projeto foi desenvolvido utilizando o Python 3.11.5. Para reproduzir o projeto, crie um ambiente virtual com o Conda, ou ferramenta similar, com o Python 3.11.5 e instale as bibliotecas abaixo:
+O projeto foi desenvolvido utilizando o Python 3.10. Para reproduzir o projeto, crie um ambiente virtual e instale as bibliotecas abaixo:
 
-| Biblioteca       | Versão |
-| ---------------- | ------ |
-| Imbalanced-Learn | 0.11.0 |
-| Matplotlib       | 3.7.2  |
-| NumPy            | 1.24.3 |
-| Pandas           | 1.5.3  |
-| Scikit-Learn     | 1.3.0  |
-| Seaborn          | 0.12.2 |
+| Biblioteca   | Versão |
+| ------------ | ------ |
+| Matplotlib   | 3.7.1  |
+| NumPy        | 1.23.5 |
+| Pandas       | 1.5.3  |
+| Scikit-Learn | 1.2.2  |
+| Seaborn      | 0.13.1 |
 
-Essas são as bibliotecas principais utilizadas no projeto. O relatório foi gerado com a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling), instale-a se quiser reproduzir o relatório. 
+Essas são as bibliotecas principais utilizadas no projeto. O relatório foi gerado com a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling), instale-a se quiser reproduzir o relatório. Para ter um gráfico em 3 dimensões interativo, instale a biblioteca [ipympl](https://matplotlib.org/ipympl/).
